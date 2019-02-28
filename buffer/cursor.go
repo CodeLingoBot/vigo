@@ -66,7 +66,7 @@ func (c *Cursor) RuneUnder() (rune, int) {
 	return utf8.DecodeRune(c.Line.Data[c.Boffset:])
 }
 
-// RuneUnder returns the rune before the current cursor and its width in bytes.
+// RuneBefore returns the rune before the current cursor and its width in bytes.
 func (c *Cursor) RuneBefore() (rune, int) {
 	return utf8.DecodeLastRune(c.Line.Data[:c.Boffset])
 }

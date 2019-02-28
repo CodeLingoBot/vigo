@@ -146,7 +146,7 @@ func (a *Action) firstLineAffectionLen() int {
 	return i
 }
 
-// returns the range of deleted lines, the first and the last one
+// DeletedLines returns the range of deleted lines, the first and the last one
 func (a *Action) DeletedLines() (int, int) {
 	first := a.Cursor.LineNum + 1
 	last := first + len(a.Lines) - 1
@@ -227,7 +227,7 @@ func (ag *ActionGroup) CursorBefore() Cursor {
 	return ag.Actions[0].Cursor
 }
 
-// CursorBefore returns cursor position after actions in the group are applied.
+// CursorAfter returns cursor position after actions in the group are applied.
 func (ag *ActionGroup) CursorAfter() Cursor {
 	// FIXME this is inaccurate for same reasons as CursorBefore()
 	return ag.Actions[len(ag.Actions)-1].Cursor
